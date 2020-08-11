@@ -58,7 +58,7 @@ class Wave(abc.ABC):
     def trim_angle(self):
         if self.displacement > 2.0 * math.pi:
             rotations = self.displacement / (2.0 * math.pi)
-            self.displacement -= math.floor(rotations) * math.pi
+            self.displacement -= math.floor(rotations) * 2.0 * math.pi
 
     @abc.abstractmethod
     def get_sample(self):
