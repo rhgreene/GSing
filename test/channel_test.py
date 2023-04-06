@@ -25,16 +25,17 @@ class ChannelResgistrationTest(unittest.TestCase):
         self.channel.register_wave(self.wave)
         assert self.channel._waves == [self.wave]
 
-# class ChannelBiddingTest(unittest.TestCase):
-#     def setUp(self):
-#         self.channel = Channel()
-#         self.observers = {
-#             a: Test_observer(),
-#             b: Test_observer(),
-#             c: Test_observer(),
-#             d: Test_observer(),
-#             e: Test_observer(),
-#             f: Test_observer(),
-#             g: Test_observer(),
-#         }
-#         self.wave = Test_wave_flat()
+class ChannelBiddingTest(unittest.TestCase):
+    def setUp(self):
+        # Set up a list of observers
+        self.channel = Channel()
+        self.observers = {
+            0.2: TestObserver(),
+            0.25: TestObserver(),
+            0.33: TestObserver(),
+            0.5: TestObserver(),
+            1.0: TestObserver(),
+            2.0: TestObserver(),
+            5.0: TestObserver(),
+        }
+        self.wave = TestWaveFlat()
